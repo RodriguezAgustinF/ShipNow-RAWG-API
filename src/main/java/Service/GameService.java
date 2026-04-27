@@ -19,9 +19,9 @@ public class GameService {
 
         for (VideoGame game : games) {
             game.getPlatforms()
-                    .getFirst()
+                    .get(0)
                     .getRequirements_en()
-                    .setMinimum(Jsoup.parse(game.getPlatforms().getFirst().getRequirements_en().getMinimum()).text());
+                    .setMinimum(Jsoup.parse(game.getPlatforms().get(0).getRequirements_en().getMinimum()).text());
         }
     }
 

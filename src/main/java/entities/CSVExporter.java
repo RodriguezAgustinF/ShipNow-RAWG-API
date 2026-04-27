@@ -16,7 +16,7 @@ public class CSVExporter {
                 fileWriter.append(escape(game.getName())).append(",");
                 fileWriter.append(escape(game.getRating())).append(",");
                 fileWriter.append(escape(game.getReleased())).append(",");
-                fileWriter.append(escape(game.getPlatforms().getFirst().getRequirements_en().getMinimum())).append("\n");
+                fileWriter.append(escape(game.getPlatforms().get(0).getRequirements_en().getMinimum())).append("\n");
             }
 
             System.out.println("Archivo generado exitosamente");
