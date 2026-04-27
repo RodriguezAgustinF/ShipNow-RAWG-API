@@ -31,10 +31,24 @@ public class Main {
 
         HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
 
+        if (response.statusCode() != 200) {
+            System.out.println("Error al llamar a la API. Código: " + response.statusCode());
+
+            if (response.statusCode() == 401 || response.statusCode() == 403) {
+                System.out.println("API Key inválida o sin permisos.");
+            }
+
+            return;
+        }
+
         APIResponse res = MAPPER.readValue(response.body(), APIResponse.class);
 
         List<VideoGame> games = res.getResults();
 
+        if (games == null || games.isEmpty()) {
+            System.out.println("No se recibieron juegos desde la API.");
+            return;
+        }
         gameService.filterPC(games);
 
         gameService.parseHTML(games);
