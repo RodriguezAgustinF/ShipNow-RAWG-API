@@ -25,7 +25,7 @@ export API_KEY=tu_api_key
 
 ## 3. Ejecutar el script
 
-Para ejecutar el script utilizar el comando .\mvnw.cmd exec:java desde la misma terminal.
+Para ejecutar el script utilizar el comando .\mvnw.cmd compile exec:java desde la misma terminal.
 
 ## Acerca del ejercicio
 
