@@ -1,6 +1,6 @@
 # Requisitos del sistema
 
-- Java JDK 17 o superior instalado
+- Java JDK 21 o superior instalado
 - JAVA_HOME configurado correctamente
 - Maven Wrapper incluido en el proyecto (no requiere instalación de Maven)
 
